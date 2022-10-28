@@ -1,0 +1,28 @@
+CREATE TABLE book_store (
+id INTEGER PRIMARY KEY,
+product TEXT,
+price INTEGER,
+inventory INTEGER,
+rating INTEGER
+);
+
+INSERT INTO book_store VALUES (1, 'A New Hope', 5, 46, 10);
+INSERT INTO book_store VALUES (2, 'Empire Strikes Back', 7, 48, 10);
+INSERT INTO book_store VALUES (3, 'Black Prism', 3, 12, 7);
+INSERT INTO book_store VALUES (4, 'The Hobbit', 8, 54, 6);
+INSERT INTO book_store VALUES (5, 'Dracula', 12, 14, 4);
+INSERT INTO book_store VALUES (6, 'Eragon', 8, 13, 9);
+INSERT INTO book_store VALUES (7, 'Art of War', 20, 87, 9);
+INSERT INTO book_store VALUES (8, 'Hitchhikers Guide to the Galaxy', 15, 97, 10);
+INSERT INTO book_store VALUES (9, 'Divine Comedy', 12, 43, 8);
+INSERT INTO book_store VALUES (10, 'John Carter', 11, 120, 8);
+INSERT INTO book_store VALUES (11, 'Two Towers', 10, 27, 10);
+INSERT INTO book_store VALUES (12, 'Wheel of Time', 16, 78, 11);
+INSERT INTO book_store VALUES (13, 'Nevernight', 11, 62, 8);
+INSERT INTO book_store VALUES (14, 'Red Wind', 3, 15, 4);
+INSERT INTO book_store VALUES (15, 'Shadow Games', 14, 34, 6);
+
+Select * FROM book_store;
+SELECT * FROM book_store ORDER BY price;
+SELECT SUM(inventory) FROM book_store;
+SELECT * FROM book_store ORDER BY rating DESC;
