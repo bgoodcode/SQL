@@ -1,0 +1,39 @@
+/* Create table about the people and what they do here */
+CREATE TABLE authors(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER
+);
+
+INSERT INTO authors(fullname, age) VALUES ("JRR Tolkein", 81);
+INSERT INTO authors(fullname, age) VALUES ("Rick Riordan", 58);
+INSERT INTO authors(fullname, age) VALUES ("Brent Weeks", 45);
+INSERT INTO authors(fullname, age) VALUES ("Robert Jordan", 58);
+INSERT INTO authors(fullname, age) VALUES ("Jay Kristoff", 48);
+
+CREATE TABLE series(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author TEXT,
+    series_name TEXT,
+    number_of_books INTEGER
+);
+
+
+INSERT INTO series(author, series_name, number_of_books) VALUES("JRR Tolkein", "Lord of the Rings", 3);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Rick Riordan", "Percy Jackson and the Olympians", 6);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Rick Riordan", "Heroes of Olympus", 5);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Brent Weeks", "Night Angel", 3);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Brent Weeks", "Lightbringer", 5);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Robert Jordan", "Wheel of Time", 14);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Jay Kristoff", "Lotus War", 3);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Jay Kristoff", "Nevernight Chronicle", 3);
+INSERT INTO series(author, series_name, number_of_books) VALUES("Jay Kristoff", "Aurora Cycle", 3);
+
+SELECT authors.fullname, series.series_name FROM authors
+JOIN series 
+ON authors.fullname = series.author;
+
+SELECT authors.fullname, SUM(series.number_of_books) FROM authors
+JOIN series
+ON authors.fullname = series.author
+GROUP BY author;
